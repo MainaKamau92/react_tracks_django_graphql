@@ -51,7 +51,6 @@ class BaseConfiguration(TestCase):
         Log in registered user and return a token
         """
         response = self.query(login_user_query.format(**self.login_user))
-        print(response)
         return response['data']['tokenAuth']['token']
 
     def user2_login(self):

@@ -1,0 +1,24 @@
+language: python 
+dist: xenial
+python: 
+ - "3.6"
+services: 
+ - mysql
+addons:
+ postgresql: "9.6"
+ chrome: stable
+ 
+env: 
+ -DJANGO=2.1.7 DB=sqlite
+install: 
+ - pip install -r requirements.txt
+before_script: 
+ - mysql -e 'create database modeltranslation;'
+ - python manage.py makemigrations
+ - python manage.py migrate
+
+script:
+  - python manage.py test
+
+after_success:
+ - coveralls

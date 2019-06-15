@@ -11,7 +11,7 @@ if __name__ == '__main__':
         if is_testing:
             import coverage
 
-            cov = coverage.coverage(source=['tracks'], omit=['*/tests/*', 'tracks/musics/apps.py', '*/migrations/*', 'tracks/wsgi.py'])
+            cov = coverage.coverage(source=['tracks'], omit=['*/tests/*', 'tracks/musics/apps.py', '*/migrations/*', 'tracks/wsgi.py', 'tracks/settings.py'])
             cov.set_option('report:show_missing', True)
             cov.erase()
             cov.start()

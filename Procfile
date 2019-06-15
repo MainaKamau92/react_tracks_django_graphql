@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath tracks tracks.wsgi

@@ -9,6 +9,7 @@ class TracksTestCase(BaseConfiguration):
     def test_tracks_query(self):
         response = self.query(test_tracks_query)
         data = response.get('data')
+        print(response)
         self.assertEquals(data.get('tracks'), [])
 
     def test_create_track(self):
